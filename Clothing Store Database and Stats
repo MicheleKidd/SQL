@@ -1,0 +1,17 @@
+CREATE TABLE clothing (id INTEGER PRIMARY KEY, style TEXT, quantity INTEGER, season TEXT, price INTEGER);
+INSERT INTO CLOTHING VALUES (1, "Ice Earrings", 2, "Summer", 35);
+INSERT INTO clothing VALUES (2, "Initial Necklace", 5, "Summer", 80);
+INSERT INTO clothing VALUES (3, "Wrap-Star Bracelet", 10, "Winter", 74);
+INSERT INTO clothing VALUES (4, "Skinny Jeans", 30, "Spring", 90);
+INSERT INTO clothing VALUES (5, "Bootcut Jeans", 30, "Spring", 100);
+INSERT INTO clothing VALUES (6, "Capri Jeans", 30, "Spring", 70);
+INSERT INTO clothing VALUES (7, "White Jeans", 30, "Spring", 90);
+INSERT INTO clothing VALUES (8, "Black Jeans", 30, "Spring", 90);
+INSERT INTO clothing VALUES (9, "Acid Wash Jeans", 30, "Spring", 90);
+INSERT INTO clothing VALUES (10, "Dog Graphic Tee", 30, "Spring", 30);
+INSERT INTO clothing VALUES (11, "Cat Graphic Tee", 30, "Spring", 30);
+INSERT INTO clothing VALUES (12, "Horse Graphic Tee", 30, "Spring", 30);
+INSERT INTO clothing VALUES (13, "Yellowstone Graphic Tee", 30, "Spring", 30);
+INSERT INTO clothing VALUES (14, "Emily in Paris Graphic Tee", 30, "Spring", 30);
+INSERT INTO clothing VALUES (15, "Beth Dutton Graphic Tee", 30, "Spring", 30);
+SELECT * FROM clothing WHERE quantity <10 ORDER BY price;
