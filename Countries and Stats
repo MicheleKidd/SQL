@@ -229,3 +229,23 @@ SELECT avg(population) as avg_population FROM countries;
 SELECT name, min(population) as min_population FROM countries;
 SELECT name, max(population) as max_population FROM countries;
 
+SELECT * FROM countries
+WHERE percent_one_year_change > 3
+AND density_per_sq_km > 10;
+
+SELECT * FROM countries
+GROUP BY percent_one_year_change
+HAVING fertility_rate >5;
+
+SELECT COUNT(*),
+CASE
+ WHEN median_age > 50 THEN "50s"
+ WHEN median_age > 40 THEN "40s"
+ WHEN median_age > 30 THEN "30s"
+ WHEN median_age > 20 THEN "20s"
+ ELSE "Prime"
+ END AS "AGE"
+ FROM countries
+ GROUP BY "AGE";
+
+
