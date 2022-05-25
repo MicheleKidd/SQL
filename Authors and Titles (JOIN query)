@@ -1,0 +1,32 @@
+CREATE TABLE Authors (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT);
+INSERT INTO Authors (fullname) VALUES ("Jane Austen");
+INSERT INTO Authors (fullname) VALUES ("Nicholas Sparks");
+INSERT INTO Authors (fullname) VALUES ("Nora Roberts");
+
+CREATE TABLE Books (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    author_id INTEGER,
+    title TEXT);
+INSERT INTO Books (author_id, title) VALUES (1, "Pride and Prejudice");
+INSERT INTO Books (author_id, title) VALUES (1, "Sense and Sensibility");
+INSERT INTO Books (author_id, title) VALUES (1, "Emma");
+INSERT INTO Books (author_id, title) VALUES (2, "The Notebook");
+INSERT INTO Books (author_id, title) VALUES (2, "Message in a Bottle");
+INSERT INTO Books (author_id, title) VALUES (2, "A Walk to Remember");
+INSERT INTO Books (author_id, title) VALUES (3, "Untamed");
+INSERT INTO Books (author_id, title) VALUES (3, "Nightwork");
+INSERT INTO Books (author_id, title) VALUES (3, "The Best Mistake");
+INSERT INTO Books (author_id, title) VALUES (1, "Mansfield Park
+");
+INSERT INTO Books (author_id, title) VALUES (3, "The Coming Storm");
+INSERT INTO Books (author_id, title) VALUES (3, "Heaven and Earth");
+
+/*What books did each author write?*/
+SELECT authors.fullname, books.title
+FROM Authors
+JOIN Books
+ON authors.id=books.author_id
+ORDER BY authors.fullname;
+
