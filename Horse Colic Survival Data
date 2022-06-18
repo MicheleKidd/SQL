@@ -1,0 +1,52 @@
+# For this project, I downloaded a dataset from Kaggle.
+# The dataset includes information about survival rates and medical data for horses with colic.
+# I created the table and imported the data.
+# Analytics were performed on the data in SQL.
+
+CREATE TABLE Horse_Survival (
+surgery text,
+age text,
+hospital_number integer,
+rectal_temp varchar,
+pulse varchar,	
+respiratory_rate varchar,	
+temp_of_extremities text,	
+peripheral_pulse text,
+mucous_membrane text,	
+capillary_refill_time text,
+pain text,
+peristalsis text,
+abdominal_distention text,	
+nasogastric_tube text,	
+nasogastric_reflux text,	
+nasogastric_reflux_ph varchar,
+rectal_exam_feces text,	
+abdomen text,	
+packed_cell_volume varchar,	
+total_protein	 varchar,
+abdomo_appearance text,
+abdomo_protein varchar,
+outcome text,
+surgical_lesion text,	
+lesion_1 integer,
+lesion_2 integer,
+lesion_3 integer,
+cp_data text
+)
+;
+
+SELECT hospital_number, age, outcome FROM BIT_DB.Horse_Survival
+WHERE outcome='lived'
+;
+
+--What were the outcomes and how many of each?
+SELECT outcome, count(*) FROM BIT_DB.Horse_Survival
+GROUP BY outcome;
+
+--How many horses are in each age group and outcome?
+SELECT age, outcome, count(*) FROM BIT_DB.Horse_Survival
+Group BY age, outcome;
+
+--How many horses survived with a Capillary Refill Time of greater than 3 seconds?
+SELECT count(capillary_refill_time) FROM  BIT_DB.Horse_Survival
+WHERE capillary_refill_time = 'more_3_sec' AND outcome = 'lived';
